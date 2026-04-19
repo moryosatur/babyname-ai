@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&family=Public+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Nunito Sans", sans-serif;
+
+  --color-primary: #a13b57;
+  --color-primary-container: #ffa9ba;
+  --color-secondary: #0a6496;
+  --color-secondary-container: #cce5ff;
+  --color-tertiary: #745c00;
+  --color-tertiary-container: #f9d461;
+  --color-surface: #fff7fb;
+  --color-on-surface: #373037;
+  --color-on-surface-variant: #655d64;
+  --color-outline: #817880;
+  --color-outline-variant: #b9afb7;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-surface text-on-surface antialiased overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 border border-white/20;
+  }
+}
